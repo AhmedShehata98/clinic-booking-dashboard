@@ -1,0 +1,497 @@
+<div class="h-full rounded-sm bg-white delay-200">
+  <header class="w-full flex items-center justify-between gap-5 px-4 py-2">
+    <h2 class="text-lg font-medium">New Doctor</h2>
+    <button
+      type="button"
+      class="size-11 flex items-center justify-center border border-neutral-200 bg-neutral-100 rounded-full p-1 text-neutral-600 cursor-pointer hover:bg-neutral-200"
+      (click)="handleClose()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-x-icon lucide-x"
+      >
+        <path d="M18 6 6 18"></path>
+        <path d="m6 6 12 12"></path>
+      </svg>
+    </button>
+  </header>
+  <form [formGroup]="form" class="relative w-full h-full overflow-y-auto py-2 pb-20">
+    <div class="w-full bg-neutral-200 px-4 py-3 mb-5 col-span-2">
+      <p class="text-sm font-medium capitalize text-neutral-600">contact information</p>
+    </div>
+    <div class="flex items-center justify-start gap-12 px-4 py-6 col-span-2">
+      <h4 class="text-neutral-800 capitalize font-medium">profile image</h4>
+      @if(form.value.avatar){
+      <figure
+        for="profile-img"
+        class="relative size-20 flex items-center justify-center bg-neutral-100 rounded-full overflow-hidden"
+      >
+        <img
+          [src]="coverImgPreview()"
+          alt="profile image preview"
+          class="w-full h-full object-cover object-center"
+        />
+        <button
+          type="button"
+          (click)="removeProfileCoverImg()"
+          class="absolute bottom-0 left-0 w-full h-6 flex items-center justify-center bg-red-300/60 text-red-800"
+        >
+          <span class="size-4 flex mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-trash2-icon lucide-trash-2"
+            >
+              <path d="M10 11v6" data--h-bstatus="0OBSERVED" />
+              <path d="M14 11v6" data--h-bstatus="0OBSERVED" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" data--h-bstatus="0OBSERVED" />
+              <path d="M3 6h18" data--h-bstatus="0OBSERVED" />
+              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" data--h-bstatus="0OBSERVED" />
+            </svg>
+          </span>
+        </button>
+      </figure>
+
+      }@else {
+      <label
+        for="profile-img"
+        class="relative size-20 flex items-center justify-center cursor-pointer bg-neutral-100 rounded-full overflow-hidden"
+      >
+        <input
+          type="file"
+          name="profile-img"
+          id="profile-img"
+          hidden
+          [value]="form.value.avatar"
+          (change)="handleGetAvatarImg($event)"
+        />
+        <span
+          class="absolute bottom-0 left-0 w-full h-6 flex items-center justify-center bg-gray-700 text-white"
+        >
+          <span class="size-4 flex mb-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-image-plus-icon lucide-image-plus"
+            >
+              <path d="M16 5h6" data--h-bstatus="0OBSERVED" />
+              <path d="M19 2v6" data--h-bstatus="0OBSERVED" />
+              <path
+                d="M21 11.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5"
+                data--h-bstatus="0OBSERVED"
+              />
+              <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" data--h-bstatus="0OBSERVED" />
+              <circle cx="9" cy="9" r="2" data--h-bstatus="0OBSERVED" />
+            </svg>
+          </span>
+        </span>
+      </label>
+      }
+    </div>
+    <div class="px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="first-name">first name</label>
+        <input
+          type="text"
+          id="fullname"
+          required
+          placeholder="Full Name"
+          formControlName="firstName"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="last-name">last name</label>
+        <input
+          type="text"
+          id="fullname"
+          required
+          placeholder="Full Name"
+          formControlName="lastName"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="email">email</label>
+        <input type="email" id="email" required placeholder="Email" formControlName="email" />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="phone">phone</label>
+        <input type="tel" id="phone" required placeholder="Phone" formControlName="phone" />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="birthday">birthday</label>
+        <input
+          type="date"
+          id="birthday"
+          required
+          placeholder="Birthday"
+          formControlName="dateOfBirth"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="gender">gender</label>
+        <select id="gender" required formControlName="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="department">department</label>
+        <input
+          type="text"
+          id="department"
+          required
+          placeholder="Department"
+          formControlName="department"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="specialization">specialization</label>
+        <input
+          type="text"
+          id="specialization"
+          required
+          placeholder="Specialization"
+          formControlName="specialty"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="experience">experience</label>
+        <input
+          type="number"
+          id="experience"
+          optional
+          placeholder="Experience"
+          formControlName="experience"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="education">education</label>
+        <input
+          type="text"
+          id="education"
+          required
+          placeholder="Education"
+          formControlName="education"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="license">license</label>
+        <input type="text" id="license" required placeholder="License" formControlName="license" />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="license-number">license number</label>
+        <input
+          type="text"
+          id="license-number"
+          required
+          placeholder="License Number"
+          formControlName="licenseNumber"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="license-expiration">license expiration</label>
+        <input
+          type="date"
+          id="license-expiration"
+          required
+          placeholder="License Expiration"
+          formControlName="licenseExpiryDate"
+        />
+      </span>
+    </div>
+    <div class="w-full bg-neutral-200 px-4 py-3 mb-5 col-span-2">
+      <p class="text-sm font-medium capitalize text-neutral-600">address information</p>
+    </div>
+    <div class="px-4 py-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="address-1">address 1</label>
+        <input
+          type="text"
+          id="address-1"
+          required
+          placeholder="address 1"
+          formControlName="firstAddress"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="address-2">address 2</label>
+        <input
+          type="text"
+          id="address-2"
+          optional
+          placeholder="address 2"
+          formControlName="secondAddress"
+        />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="city">city</label>
+        <input type="text" id="city" required placeholder="City" formControlName="city" />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="state">state</label>
+        <input type="text" id="state" required placeholder="State" formControlName="state" />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="zip">zip</label>
+        <input type="text" id="zip" required placeholder="Zip" formControlName="zip" />
+      </span>
+      <span class="w-full flex flex-col items-start justify-start gap-1.5">
+        <label for="country">country</label>
+        <input type="text" id="country" required placeholder="Country" formControlName="country" />
+      </span>
+    </div>
+    <div class="w-full bg-neutral-200 px-4 py-3 mb-5 col-span-2">
+      <p class="text-sm font-medium capitalize text-neutral-600">appointment Schedule</p>
+    </div>
+    <div class="w-full flex flex-col gap-3.5 px-4">
+      <ul class="w-full flex flex-wrap gap-3.5 mb-3">
+        <li
+          class="w-fit flex flex-row items-center justify-start gap-2 bg-neutral-100 rounded-md px-3 py-2 cursor-pointer"
+          [class.bg-sky-200]="form.value._days?.includes('saturday')"
+          (click)="onAddSessionDay('saturday')"
+        >
+          <input type="checkbox" id="saturday" value="saturday" hidden />
+          <label for="saturday" class="cursor-pointer">Saturday</label>
+        </li>
+
+        <li
+          [class.bg-sky-200]="form.value._days?.includes('sunday')"
+          class="w-fit flex flex-row items-center justify-start gap-2 bg-neutral-100 rounded-md px-3 py-2 cursor-pointer"
+          (click)="onAddSessionDay('sunday')"
+        >
+          <input type="checkbox" id="sunday" value="sunday" hidden />
+          <label for="sunday" class="cursor-pointer">Sunday</label>
+        </li>
+
+        <li
+          [class.bg-sky-200]="form.value._days?.includes('monday')"
+          class="w-fit flex flex-row items-center justify-start gap-2 bg-neutral-100 rounded-md px-3 py-2 cursor-pointer"
+          (click)="onAddSessionDay('monday')"
+        >
+          <input type="checkbox" id="monday" value="monday" hidden />
+          <label for="monday" class="cursor-pointer">Monday</label>
+        </li>
+        <li
+          [class.bg-sky-200]="form.value._days?.includes('tuesday')"
+          class="w-fit flex flex-row items-center justify-start gap-2 bg-neutral-100 rounded-md px-3 py-2 cursor-pointer"
+          (click)="onAddSessionDay('tuesday')"
+        >
+          <input type="checkbox" id="tuesday" value="tuesday" hidden />
+          <label for="tuesday" class="cursor-pointer">Tuesday</label>
+        </li>
+
+        <li
+          [class.bg-sky-200]="form.value._days?.includes('wednesday')"
+          class="w-fit flex flex-row items-center justify-start gap-2 bg-neutral-100 rounded-md px-3 py-2 cursor-pointer"
+          (click)="onAddSessionDay('wednesday')"
+        >
+          <input type="checkbox" id="wednesday" value="wednesday" hidden />
+          <label for="wednesday" class="cursor-pointer">Wednesday</label>
+        </li>
+
+        <li
+          [class.bg-sky-200]="form.value._days?.includes('thursday')"
+          class="w-fit flex flex-row items-center justify-start gap-2 bg-neutral-100 rounded-md px-3 py-2 cursor-pointer"
+          (click)="onAddSessionDay('thursday')"
+        >
+          <input type="checkbox" id="thursday" value="thursday" hidden />
+          <label for="thursday" class="cursor-pointer">Thursday</label>
+        </li>
+
+        <li
+          [class.bg-sky-200]="form.value._days?.includes('friday')"
+          class="w-fit flex flex-row items-center justify-start gap-2 bg-neutral-100 rounded-md px-3 py-2 cursor-pointer"
+          (click)="onAddSessionDay('friday')"
+        >
+          <input type="checkbox" id="friday" value="friday" hidden />
+          <label for="friday" class="cursor-pointer">Friday</label>
+        </li>
+      </ul>
+      <h4 class="text-sm capitalize text-neutral-800 mb-2 font-semibold">session</h4>
+      <!-- added sessions list -->
+      <ul class="w-full grid grid-cols-1 gap-y-2">
+        @for (item of form.value.sessionsList ; track item.id){
+        <li class="w-full flex items-end justify-start gap-3">
+          <span class="w-96 flex items-start justify-start gap-1 flex-col">
+            <label for="session-name">session</label>
+            <input
+              type="text"
+              name="session-name"
+              id="session-name"
+              placeholder="session name"
+              disabled
+              required
+              [defaultValue]="item.name"
+              class="w-full disabled:border-transparent disabled:bg-neutral-200 disabled:opacity-60"
+            />
+          </span>
+          <span class="w-36 flex items-start justify-start gap-1 flex-col">
+            <label for="session-start-time">start time</label>
+            <input
+              type="time"
+              name="session-start-time"
+              id="session-start-time"
+              disabled
+              required
+              [defaultValue]="item.startTime"
+              class="w-full disabled:border-transparent disabled:bg-neutral-200 disabled:opacity-60"
+            />
+          </span>
+          <span class="w-36 flex items-start justify-start gap-1 flex-col">
+            <label for="session-end-time">end time</label>
+            <input
+              type="time"
+              name="session-end-time"
+              id="session-end-time"
+              disabled
+              required
+              [defaultValue]="item.endTime"
+              class="w-full disabled:border-transparent disabled:bg-neutral-200 disabled:opacity-60"
+            />
+          </span>
+          <button
+            type="button"
+            class="bg-red-200 text-red-800 px-2 py-1.5 rounded-sm cursor-pointer"
+            (click)="onRemoveFormSessionItem(item.id)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-trash2-icon lucide-trash-2"
+            >
+              <path d="M10 11v6" data--h-bstatus="0OBSERVED" />
+              <path d="M14 11v6" data--h-bstatus="0OBSERVED" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" data--h-bstatus="0OBSERVED" />
+              <path d="M3 6h18" data--h-bstatus="0OBSERVED" />
+              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" data--h-bstatus="0OBSERVED" />
+            </svg>
+          </button>
+        </li>
+        }
+      </ul>
+      <div class="w-full flex items-end justify-start gap-3">
+        <span class="w-96 flex items-start justify-start gap-1 flex-col">
+          <label for="session-name">session</label>
+          <input
+            type="text"
+            name="session-name"
+            id="session-name"
+            placeholder="session name"
+            required
+            formControlName="_sessionName"
+            class="w-full"
+          />
+        </span>
+        <span class="w-36 flex items-start justify-start gap-1 flex-col">
+          <label for="session-start-time">start time</label>
+          <input
+            type="time"
+            name="session-start-time"
+            id="session-start-time"
+            required
+            formControlName="_sessionStartTime"
+            class="w-full"
+          />
+        </span>
+        <span class="w-36 flex items-start justify-start gap-1 flex-col">
+          <label for="session-end-time">end time</label>
+          <input
+            type="time"
+            name="session-end-time"
+            id="session-end-time"
+            required
+            formControlName="_sessionEndTime"
+            class="w-full"
+          />
+        </span>
+        <button
+          type="button"
+          class="bg-neutral-200 text-black px-2 py-1.5 rounded-sm cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-plus-icon lucide-plus"
+            (click)="onAddFormSessionItem()"
+          >
+            <path d="M5 12h14" data--h-bstatus="0OBSERVED" />
+            <path d="M12 5v14" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </button>
+        <button type="button" class="bg-red-200 text-red-800 px-2 py-1.5 rounded-sm cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-trash2-icon lucide-trash-2"
+          >
+            <path d="M10 11v6" data--h-bstatus="0OBSERVED" />
+            <path d="M14 11v6" data--h-bstatus="0OBSERVED" />
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" data--h-bstatus="0OBSERVED" />
+            <path d="M3 6h18" data--h-bstatus="0OBSERVED" />
+            <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="w-full flex items-center justify-end gap-3 mt-12 border-t border-neutral-200 pt-4 px-3"
+    >
+      <button
+        type="button"
+        class="min-w-28 flex items-center justify-center gap-2 cursor-pointer px-4 py-1.5 rounded-md hover:brightness-110 shadow-sm text-sm font-medium"
+        (click)="handleClose()"
+      >
+        cancel
+      </button>
+      <button
+        type="submit"
+        class="min-w-28 flex items-center justify-center gap-2 cursor-pointer px-4 py-1.5 rounded-md hover:brightness-110 text-neutral-50 text-sm font-medium shadow-sm bg-primary-400"
+      >
+        submit
+      </button>
+    </div>
+  </form>
+</div>

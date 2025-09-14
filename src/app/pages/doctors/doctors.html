@@ -1,0 +1,146 @@
+<header class="flex items-center justify-between gap-5 mb-7">
+  <div class="flex items-center justify-start gap-3">
+    <h3 class="text-lg capitalize font-bold">doctors list</h3>
+    <p
+      class="flex p-1.5 text-sm leading-3 text-primary-600 border border-primary-600 rounded-md capitalize"
+    >
+      total doctors : 21
+    </p>
+  </div>
+  <div class="flex items-center justify-end gap-3">
+    <button
+      type="button"
+      class="flex items-center justify-center gap-2 bg-white px-4 py-1.5 text-sm rounded-md border border-neutral-200 text-neutral-500 capitalize font-medium"
+    >
+      <span class="size-4 flex items-center justify-center"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-list-filter-icon lucide-list-filter"
+        >
+          <path d="M2 5h20" data--h-bstatus="0OBSERVED" />
+          <path d="M6 12h12" data--h-bstatus="0OBSERVED" />
+          <path d="M9 19h6" data--h-bstatus="0OBSERVED" /></svg
+      ></span>
+      <p>filter</p>
+    </button>
+    <div
+      class="flex items-center justify-between gap-2 rounded-md p-1 bg-white border border-neutral-200"
+    >
+      <button
+        type="button"
+        class="flex items-center justify-center gap-2 bg-white px-2 py-1 text-sm rounded-md text-neutral-700 capitalize font-medium"
+      >
+        <span class="size-4 flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-list-icon lucide-list"
+          >
+            <path d="M3 5h.01" data--h-bstatus="0OBSERVED" />
+            <path d="M3 12h.01" data--h-bstatus="0OBSERVED" />
+            <path d="M3 19h.01" data--h-bstatus="0OBSERVED" />
+            <path d="M8 5h13" data--h-bstatus="0OBSERVED" />
+            <path d="M8 12h13" data--h-bstatus="0OBSERVED" />
+            <path d="M8 19h13" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="flex items-center justify-center gap-2 bg-neutral-50 px-2 py-1 text-sm rounded-md border border-neutral-200 text-neutral-700 capitalize font-medium"
+      >
+        <span class="size-4 flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-grid3x3-icon lucide-grid-3x3"
+          >
+            <rect width="18" height="18" x="3" y="3" rx="2" data--h-bstatus="0OBSERVED" />
+            <path d="M3 9h18" data--h-bstatus="0OBSERVED" />
+            <path d="M3 15h18" data--h-bstatus="0OBSERVED" />
+            <path d="M9 3v18" data--h-bstatus="0OBSERVED" />
+            <path d="M15 3v18" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <button
+      type="button"
+      class="flex items-center justify-center gap-3 bg-primary-400 px-5 py-2 leading-3 rounded-md text-white capitalize text-sm font-medium cursor-pointer hover:brightness-110"
+      (click)="isShownDoctorModal.set(true)"
+    >
+      <span class="flex items-center justify-center size-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-plus-icon lucide-plus"
+        >
+          <path d="M5 12h14" data--h-bstatus="0OBSERVED" />
+          <path d="M12 5v14" data--h-bstatus="0OBSERVED" />
+        </svg>
+      </span>
+      <p>new doctor</p>
+    </button>
+  </div>
+</header>
+<ul class="w-full grid grid-cols-1 md:grid-cols-2 gap-3 lg:grid-cols-3">
+  @for(doctor of doctors;track doctor.name){
+  <app-doctor-card [doctor]="doctor" />
+  }
+</ul>
+<button
+  type="button"
+  class="flex items-center justify-center gap-2 rounded-md border border-neutral-200 bg-white capitalize px-4 py-2 mt-10 justify-self-center"
+>
+  <p>load more</p>
+  <span class="size-5 flex items-center justify-center"
+    ><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-loader-circle-icon lucide-loader-circle"
+    >
+      <path d="M21 12a9 9 0 1 1-6.219-8.56" data--h-bstatus="0OBSERVED" /></svg
+  ></span>
+</button>
+<button type="button" (click)="isShownDoctorModal.set(true)">open</button>
+@if(isShownDoctorModal()){
+<app-modal>
+  <app-new-doctor [isShown]="isShownDoctorModal()" (onClose)="isShownDoctorModal.set(false)" />
+</app-modal>
+}

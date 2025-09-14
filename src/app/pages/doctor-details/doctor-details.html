@@ -1,0 +1,427 @@
+<div class="w-full flex items-center justify-start gap-6 mb-3.5">
+  <a
+    routerLink="../"
+    class="flex items-center justify-center gap-3 hover:bg-neutral-50 rounded-md py-1.5 px-2.5 cursor-pointer"
+  >
+    <span class="flex items-center justify-center size-4"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-chevron-left-icon lucide-chevron-left"
+      >
+        <path d="m15 18-6-6 6-6" data--h-bstatus="0OBSERVED" /></svg
+    ></span>
+    <p class="text-base font-semibold capitalize text-neutral-700">doctors</p>
+  </a>
+</div>
+<header
+  class="w-full flex items-start justify-start gap-3 p-4 rounded-md bg-white border border-neutral-200"
+>
+  <figure class="w-32 h-36 shrink-0 overflow-hidden rounded-md">
+    <img src="doctors/doc-01.jpeg" alt="doc-01.jpeg" class="h-full object-center object-cover" />
+  </figure>
+  <div class="w-full h-full">
+    <p class="text-primary-500 text-sm font-medium mb-1">#{{ doctorId() }}</p>
+    <div class="flex items-center justify-start gap-3 mb-1">
+      <h3 class="text-neutral-700 text-lg capitalize font-semibold">Dr. John Smith</h3>
+      <span
+        class="flex items-center justify-start gap-3 border border-neutral-300 rounded-md px-2 py-1.5 leading-3 text-neutral-700 text-base capitalize"
+      >
+        <span class="size-2 flex bg-primary-600 rounded-full"></span>
+        <p>cardiology</p>
+      </span>
+    </div>
+    <p class="text-sm text-neutral-400 capitalize">MBBS, M.D, Cardiology</p>
+    <div class="flex items-center justify-start gap-5 mt-8">
+      <span class="flex items-center justify-start gap-3 text-neutral-600">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-hospital-icon lucide-hospital"
+        >
+          <path d="M12 7v4" data--h-bstatus="0OBSERVED" />
+          <path d="M14 21v-3a2 2 0 0 0-4 0v3" data--h-bstatus="0OBSERVED" />
+          <path d="M14 9h-4" data--h-bstatus="0OBSERVED" />
+          <path
+            d="M18 11h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2"
+            data--h-bstatus="0OBSERVED"
+          />
+          <path d="M18 21V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16" data--h-bstatus="0OBSERVED" />
+        </svg>
+        <p class="text-sm text-neutral-400 capitalize">Clinic : Downtown Medical Clinic</p>
+      </span>
+      <span
+        class="flex items-center justify-center gap-2.5 text-emerald-600 bg-emerald-100 rounded-md px-3 py-2"
+      >
+        <span class="size-2 inline-block bg-emerald-600 rounded-full"></span>
+        <p class="leading-3 capitalize text-sm">available</p>
+      </span>
+    </div>
+  </div>
+  <div class="w-72 flex flex-col items-start justify-start gap-2">
+    <p class="text-neutral-400 capitalize font-light">Consultation Charge</p>
+    <span class="flex items-center justify-start gap-2 text-sm">
+      <p class="text-neutral-800 font-semibold capitalize">{{ 14000 | currency : 'EGP' }}</p>
+      <p class="font-medium capitalize text-neutral-400 shrink-0">/ 30 min</p>
+    </span>
+    <button
+      type="button"
+      class="flex items-center justify-center gap-2 px-4 py-2 leading-3 bg-primary-400 text-xs font-medium rounded-md text-white mt-9"
+    >
+      <span class="size-4 flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-clipboard-clock-icon lucide-clipboard-clock"
+        >
+          <path d="M16 14v2.2l1.6 1" data--h-bstatus="0OBSERVED" />
+          <path d="M16 4h2a2 2 0 0 1 2 2v.832" data--h-bstatus="0OBSERVED" />
+          <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h2" data--h-bstatus="0OBSERVED" />
+          <circle cx="16" cy="16" r="6" data--h-bstatus="0OBSERVED" />
+          <rect x="8" y="2" width="8" height="4" rx="1" data--h-bstatus="0OBSERVED" />
+        </svg>
+      </span>
+      <p>Book Apppointment</p>
+    </button>
+  </div>
+</header>
+<div class="w-full flex items-start justify-start gap-5 mt-4">
+  <ul class="w-3/4 grid grid-cols-1 gap-5">
+    <li class="w-full flex flex-col bg-white p-4 rounded-sm border border-neutral-200">
+      <h5 class="font-semibold capitalize text-lg text-neutral-800 text-start pb-3">
+        Availability
+      </h5>
+      <div class="w-full grid grid-cols-6 bg-white">
+        <p
+          class="text-sm text-neutral-600 font-medium capitalize text-center py-2.5 cursor-pointer hover:bg-neutral-100 border-b-2 border-primary-400"
+        >
+          saturday
+        </p>
+        <p
+          class="text-sm text-neutral-600 font-medium capitalize text-center py-2.5 cursor-pointer hover:bg-neutral-100 border-b-2 border-transparent"
+        >
+          sunday
+        </p>
+        <p
+          class="text-sm text-neutral-600 font-medium capitalize text-center py-2.5 cursor-pointer hover:bg-neutral-100 border-b-2 border-transparent"
+        >
+          monday
+        </p>
+        <p
+          class="text-sm text-neutral-600 font-medium capitalize text-center py-2.5 cursor-pointer hover:bg-neutral-100 border-b-2 border-transparent"
+        >
+          monday
+        </p>
+        <p
+          class="text-sm text-neutral-600 font-medium capitalize text-center py-2.5 cursor-pointer hover:bg-neutral-100 border-b-2 border-transparent"
+        >
+          tuesday
+        </p>
+        <p
+          class="text-sm text-neutral-600 font-medium capitalize text-center py-2.5 cursor-pointer hover:bg-neutral-100 border-b-2 border-transparent"
+        >
+          wednesday
+        </p>
+        <p
+          class="text-sm text-neutral-600 font-medium capitalize text-center py-2.5 cursor-pointer hover:bg-neutral-100 border-b-2 border-transparent"
+        >
+          thursday
+        </p>
+      </div>
+      <div class="w-full grid grid-cols-4 gap-3 flex-wrap">
+        <span
+          class="flex items-center justify-center gap-2 rounded-md bg-neutral-100 px-3 py-2 text-sm font-medium uppercase"
+        >
+          <p>11:00 AM</p>
+          <p>-</p>
+          <p>11:00 PM</p>
+        </span>
+        <span
+          class="flex items-center justify-center gap-2 rounded-md bg-neutral-100 px-3 py-2 text-sm font-medium uppercase"
+        >
+          <p>11:00 AM</p>
+          <p>-</p>
+          <p>11:00 PM</p>
+        </span>
+        <span
+          class="flex items-center justify-center gap-2 rounded-md bg-neutral-100 px-3 py-2 text-sm font-medium uppercase"
+        >
+          <p>11:00 AM</p>
+          <p>-</p>
+          <p>11:00 PM</p>
+        </span>
+        <span
+          class="flex items-center justify-center gap-2 rounded-md bg-neutral-100 px-3 py-2 text-sm font-medium uppercase"
+        >
+          <p>11:00 AM</p>
+          <p>-</p>
+          <p>11:00 PM</p>
+        </span>
+        <span
+          class="flex items-center justify-center gap-2 rounded-md bg-neutral-100 px-3 py-2 text-sm font-medium uppercase"
+        >
+          <p>11:00 AM</p>
+          <p>-</p>
+          <p>11:00 PM</p>
+        </span>
+        <span
+          class="flex items-center justify-center gap-2 rounded-md bg-neutral-100 px-3 py-2 text-sm font-medium uppercase"
+        >
+          <p>11:00 AM</p>
+          <p>-</p>
+          <p>11:00 PM</p>
+        </span>
+      </div>
+    </li>
+    <li class="w-full flex flex-col bg-white p-4 rounded-sm border border-neutral-200">
+      <h5 class="font-semibold capitalize text-lg text-neutral-800 text-start pb-3">BIO</h5>
+      <p class="text-neutral-400 capitalize text-sm">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A distinctio sint beatae maiores
+        maxime quidem voluptate accusamus molestiae dolore deleniti tenetur quia fuga veritatis
+        vero, accusantium, ducimus doloremque fugiat rem!
+      </p>
+    </li>
+    <li class="w-full flex flex-col bg-white p-4 rounded-sm border border-neutral-200">
+      <h5 class="font-semibold capitalize text-lg text-neutral-800 text-start pb-3">
+        Education Information
+      </h5>
+      <ul class="w-full grid grid-cols-1 gap-3">
+        <li class="flex items-center justify-start gap-2">
+          <span class="size-2.5 rounded-full inline-block mx-3 bg-primary-400"></span>
+          <span class="flex flex-col gap-1.5">
+            <p class="capitalize font-semibold text-neutral-800 text-sm">
+              Boston Medicine Institutuion - MD
+            </p>
+            <p class="capitalize font-semibold text-neutral-400 text-xs">
+              25 May 1990 - 29 Jan 1992
+            </p>
+          </span>
+        </li>
+        <li class="flex items-center justify-start gap-2">
+          <span class="size-2.5 rounded-full inline-block mx-3 bg-primary-400"></span>
+          <span class="flex flex-col gap-1.5">
+            <p class="capitalize font-semibold text-neutral-800 text-sm">
+              Boston Medicine Institutuion - MD
+            </p>
+            <p class="capitalize font-semibold text-neutral-400 text-xs">
+              25 May 1990 - 29 Jan 1992
+            </p>
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="w-full lg:w-1/4 flex flex-col bg-white p-4 rounded-sm border border-neutral-200">
+    <h5 class="font-semibold capitalize text-lg text-neutral-800 text-start pb-5">about</h5>
+    <ul class="w-full grid grid-cols-1 gap-3">
+      <li class="flex items-center justify-start gap-3">
+        <span
+          class="size-12 p-2 shrink-0 rounded-full flex items-center justify-center bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-copyright-icon lucide-copyright"
+          >
+            <circle cx="12" cy="12" r="10" data--h-bstatus="0OBSERVED" />
+            <path d="M14.83 14.83a4 4 0 1 1 0-5.66" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+        <span class="flex flex-col gap-1.5">
+          <p class="capitalize font-semibold text-neutral-800 text-sm">Medical Liscence Number</p>
+          <p class="capitalize font-semibold text-neutral-400 text-xs">ML566659898</p>
+        </span>
+      </li>
+      <li class="flex items-center justify-start gap-3">
+        <span
+          class="size-12 p-2 shrink-0 rounded-full flex items-center justify-center bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-phone-icon lucide-phone"
+          >
+            <path
+              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+              data--h-bstatus="0OBSERVED"
+            />
+          </svg>
+        </span>
+        <span class="flex flex-col gap-1.5">
+          <p class="capitalize font-semibold text-neutral-800 text-sm">Phone Number</p>
+          <p class="capitalize font-semibold text-neutral-400 text-xs">+1 54546 45648</p>
+        </span>
+      </li>
+      <li class="flex items-center justify-start gap-3">
+        <span
+          class="size-12 p-2 shrink-0 rounded-full flex items-center justify-center bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-mail-icon lucide-mail"
+          >
+            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" data--h-bstatus="0OBSERVED" />
+            <rect x="2" y="4" width="20" height="16" rx="2" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+        <span class="flex flex-col gap-1.5">
+          <p class="capitalize font-semibold text-neutral-800 text-sm">Email Address</p>
+          <p class="capitalize font-semibold text-neutral-400 text-xs">example@email.com</p>
+        </span>
+      </li>
+      <li class="flex items-center justify-start gap-3">
+        <span
+          class="size-12 p-2 shrink-0 rounded-full flex items-center justify-center bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-map-pin-icon lucide-map-pin"
+          >
+            <path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+              data--h-bstatus="0OBSERVED"
+            />
+            <circle cx="12" cy="10" r="3" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+        <span class="flex flex-col gap-1.5">
+          <p class="capitalize font-semibold text-neutral-800 text-sm">location</p>
+          <p class="capitalize font-semibold text-neutral-400 text-xs">
+            Lorem ipsum dolor sit amet consectetur.
+          </p>
+        </span>
+      </li>
+      <li class="flex items-center justify-start gap-3">
+        <span
+          class="size-12 p-2 shrink-0 rounded-full flex items-center justify-center bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-calendar-icon lucide-calendar"
+          >
+            <path d="M8 2v4" data--h-bstatus="0OBSERVED" />
+            <path d="M16 2v4" data--h-bstatus="0OBSERVED" />
+            <rect width="18" height="18" x="3" y="4" rx="2" data--h-bstatus="0OBSERVED" />
+            <path d="M3 10h18" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+        <span class="flex flex-col gap-1.5">
+          <p class="capitalize font-semibold text-neutral-800 text-sm">birthday</p>
+          <p class="capitalize font-semibold text-neutral-400 text-xs">09 / 10 / 1988</p>
+        </span>
+      </li>
+      <li class="flex items-center justify-start gap-3">
+        <span
+          class="size-12 p-2 shrink-0 rounded-full flex items-center justify-center bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-briefcase-business-icon lucide-briefcase-business"
+          >
+            <path d="M12 12h.01" data--h-bstatus="0OBSERVED" />
+            <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" data--h-bstatus="0OBSERVED" />
+            <path d="M22 13a18.15 18.15 0 0 1-20 0" data--h-bstatus="0OBSERVED" />
+            <rect width="20" height="14" x="2" y="6" rx="2" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+        <span class="flex flex-col gap-1.5">
+          <p class="capitalize font-semibold text-neutral-800 text-sm">Year of Experience</p>
+          <p class="capitalize font-semibold text-neutral-400 text-xs">4+</p>
+        </span>
+      </li>
+      <li class="flex items-center justify-start gap-3">
+        <span
+          class="size-12 p-2 shrink-0 rounded-full flex items-center justify-center bg-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-mars-icon lucide-mars"
+          >
+            <path d="M16 3h5v5" data--h-bstatus="0OBSERVED" />
+            <path d="m21 3-6.75 6.75" data--h-bstatus="0OBSERVED" />
+            <circle cx="10" cy="14" r="6" data--h-bstatus="0OBSERVED" />
+          </svg>
+        </span>
+        <span class="flex flex-col gap-1.5">
+          <p class="capitalize font-semibold text-neutral-800 text-sm">gender</p>
+          <p class="capitalize font-semibold text-neutral-400 text-xs">male</p>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>

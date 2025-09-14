@@ -1,0 +1,148 @@
+<header class="w-full flex items-center justify-between gap-5 mb-5">
+  <h3 class="text-lg capitalize font-bold">locations</h3>
+  <button
+    type="button"
+    class="flex items-center justify-center gap-3 bg-primary-400 px-5 py-2 leading-3 rounded-md text-white capitalize text-sm font-medium cursor-pointer hover:brightness-110"
+  >
+    <span class="flex items-center justify-center size-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-plus-icon lucide-plus"
+      >
+        <path d="M5 12h14" data--h-bstatus="0OBSERVED" />
+        <path d="M12 5v14" data--h-bstatus="0OBSERVED" />
+      </svg>
+    </span>
+    <p>new location</p>
+  </button>
+</header>
+<table class="table-main">
+  <thead class="table-head">
+    <tr class="table-row-head">
+      <td class="table-header">clinic name</td>
+      <td class="table-header">address</td>
+      <td class="table-header">actions</td>
+    </tr>
+  </thead>
+  <tbody class="table-body">
+    @for ( location of locations; track location.id) {
+    <tr class="table-row">
+      <td class="table-cell">{{ location.clinicName }}</td>
+      <td class="table-cell">
+        <div class="flex items-center justify-start gap-3">
+          <figure class="size-10 rounded-full overflow-hidden">
+            <img
+              [src]="location.img"
+              [alt]="location.clinicName"
+              width="40"
+              height="40"
+              class="object-cover object-center"
+            />
+          </figure>
+          <div>
+            <p class="text-neutral-800 capitalize text-base font-medium">
+              {{ location.clinicName }}
+            </p>
+          </div>
+        </div>
+      </td>
+      <td class="table-cell">{{ location.address }}</td>
+      <td>
+        <button
+          type="button"
+          class="flex items-center justify-center hover:brightness-90 cursor-pointer"
+        >
+          <svg
+            width="27"
+            height="27"
+            viewBox="0 0 27 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_d_326_369012)">
+              <path
+                d="M2.33301 7.5C2.33301 4.18629 5.0193 1.5 8.33301 1.5H18.333C21.6467 1.5 24.333 4.18629 24.333 7.5V17.5C24.333 20.8137 21.6467 23.5 18.333 23.5H8.33301C5.0193 23.5 2.33301 20.8137 2.33301 17.5V7.5Z"
+                fill="white"
+                shape-rendering="crispEdges"
+              />
+              <path
+                d="M18.333 1C21.9229 1 24.833 3.91015 24.833 7.5V17.5C24.833 21.0899 21.9229 24 18.333 24H8.33301C4.74316 24 1.83301 21.0898 1.83301 17.5V7.5C1.83301 3.91015 4.74316 1 8.33301 1H18.333Z"
+                stroke="#E7E8EB"
+                shape-rendering="crispEdges"
+              />
+              <g clip-path="url(#clip0_326_369012)">
+                <path
+                  d="M12.7495 12.4998C12.7495 12.6545 12.811 12.8029 12.9204 12.9123C13.0298 13.0217 13.1781 13.0832 13.3328 13.0832C13.4876 13.0832 13.6359 13.0217 13.7453 12.9123C13.8547 12.8029 13.9162 12.6545 13.9162 12.4998C13.9162 12.3451 13.8547 12.1968 13.7453 12.0874C13.6359 11.978 13.4876 11.9165 13.3328 11.9165C13.1781 11.9165 13.0298 11.978 12.9204 12.0874C12.811 12.1968 12.7495 12.3451 12.7495 12.4998Z"
+                  stroke="#6C7688"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.7495 16.5833C12.7495 16.738 12.811 16.8864 12.9204 16.9958C13.0298 17.1052 13.1781 17.1667 13.3328 17.1667C13.4876 17.1667 13.6359 17.1052 13.7453 16.9958C13.8547 16.8864 13.9162 16.738 13.9162 16.5833C13.9162 16.4286 13.8547 16.2803 13.7453 16.1709C13.6359 16.0615 13.4876 16 13.3328 16C13.1781 16 13.0298 16.0615 12.9204 16.1709C12.811 16.2803 12.7495 16.4286 12.7495 16.5833Z"
+                  stroke="#6C7688"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.7495 8.41683C12.7495 8.57154 12.811 8.71991 12.9204 8.82931C13.0298 8.9387 13.1781 9.00016 13.3328 9.00016C13.4876 9.00016 13.6359 8.9387 13.7453 8.82931C13.8547 8.71991 13.9162 8.57154 13.9162 8.41683C13.9162 8.26212 13.8547 8.11375 13.7453 8.00435C13.6359 7.89495 13.4876 7.8335 13.3328 7.8335C13.1781 7.8335 13.0298 7.89495 12.9204 8.00435C12.811 8.11375 12.7495 8.26212 12.7495 8.41683Z"
+                  stroke="#6C7688"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </g>
+            <defs>
+              <filter
+                id="filter0_d_326_369012"
+                x="0.333008"
+                y="0.5"
+                width="26"
+                height="26"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="1" />
+                <feGaussianBlur stdDeviation="0.5" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_326_369012"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_326_369012"
+                  result="shape"
+                />
+              </filter>
+              <clipPath id="clip0_326_369012">
+                <rect width="14" height="14" fill="white" transform="translate(6.33301 5.5)" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,126 @@
+<form
+  action=""
+  class="w-11/12 md:w-9/12 lg:w-8/12 xl:w-6/12 flex flex-col p-10 items-center justify-center gap-1 border border-neutral-200 rounded-md"
+>
+  <h3 class="text-xl font-bold uppercase text-center text-neutral-800">sign in</h3>
+  <p class="text-sm text-center text-neutral-500 mb-7">
+    Please enter below details to access the dashboard
+  </p>
+  <span class="w-full flex flex-col items-start justify-start gap-1.5 mb-3">
+    <label for="email">Email</label>
+    <input type="email" id="email" required placeholder="Enter your email" />
+  </span>
+  <span class="w-full flex flex-col items-start justify-start gap-1.5 mb-3">
+    <label for="password">Password</label>
+    <input type="password" id="password" required placeholder="**************" />
+  </span>
+  <div class="w-full flex items-center justify-between gap-3 mb-3">
+    <span class="w-full flex items-center justify-start gap-3">
+      <input type="checkbox" id="remember" required class="size-4 rounded-sm accent-primary-400" />
+      <label for="remember">Remember Me</label>
+    </span>
+    <a routerLink="/forget-password" class="text-sm text-red-400 shrink-0">Forgot Password?</a>
+  </div>
+  <button type="submit" class="w-full py-2 bg-primary-400 text-white rounded-md">login</button>
+  <div class="relative h-0.5 w-full flex items-center justify-center my-5 bg-neutral-100">
+    <p
+      class="absolute left-1/2 top-1/2 size-8 text-center -translate-x-1/2 -translate-y-1/2 text-neutral-500 bg-white rounded-full"
+    >
+      or
+    </p>
+  </div>
+  <div class="w-full flex items-center justify-center gap-3">
+    <button
+      type="button"
+      class="w-full h-10 flex items-center justify-center py-2 border border-neutral-200 rounded-sm"
+    >
+      <svg
+        width="24"
+        height="25"
+        viewBox="0 0 24 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_57645_51898)">
+          <path
+            d="M23.9971 12.2297C23.9971 5.56158 18.6247 0.15625 11.9986 0.15625C5.3694 0.15775 -0.00292969 5.56158 -0.00292969 12.2312C-0.00292969 18.256 4.38552 23.2504 10.1208 24.1563V15.7198H7.07619V12.2312H10.1238V9.56907C10.1238 6.54395 11.9161 4.87316 14.6562 4.87316C15.9701 4.87316 17.3424 5.10863 17.3424 5.10863V8.07826H15.8291C14.3398 8.07826 13.8748 9.00964 13.8748 9.96502V12.2297H17.2014L16.6705 15.7183H13.8733V24.1548C19.6086 23.2489 23.9971 18.2545 23.9971 12.2297Z"
+            fill="#2F80ED"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_57645_51898">
+            <rect y="0.15625" width="24" height="24" rx="12" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="w-full h-10 flex items-center justify-center py-2 border border-neutral-200 rounded-sm"
+    >
+      <svg
+        width="24"
+        height="25"
+        viewBox="0 0 24 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="24" height="24" transform="translate(0 0.15625)" fill="white" />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M23.04 12.4167C23.04 11.6013 22.9668 10.8172 22.8309 10.0645H12V14.5129H18.1891C17.9225 15.9504 17.1123 17.1683 15.8943 17.9838V20.8692H19.6109C21.7855 18.8672 23.04 15.919 23.04 12.4167Z"
+          fill="#2F80ED"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 23.6568C15.105 23.6568 17.7081 22.627 19.6109 20.8707L15.8943 17.9852C14.8645 18.6752 13.5472 19.0829 12 19.0829C9.00474 19.0829 6.46951 17.06 5.56519 14.3418H1.72314V17.3213C3.61542 21.0798 7.50451 23.6568 12 23.6568Z"
+          fill="#27AE60"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M5.56523 14.3417C5.33523 13.6517 5.20455 12.9147 5.20455 12.1567C5.20455 11.3988 5.33523 10.6617 5.56523 9.97173V6.99219H1.72318C0.944318 8.54469 0.5 10.3011 0.5 12.1567C0.5 14.0124 0.944318 15.7688 1.72318 17.3213L5.56523 14.3417Z"
+          fill="#E2B93B"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12 5.23011C13.6884 5.23011 15.2043 5.81034 16.3961 6.94989L19.6945 3.65148C17.7029 1.7958 15.0997 0.65625 12 0.65625C7.50451 0.65625 3.61542 3.2333 1.72314 6.9917L5.56519 9.97125C6.46951 7.25307 9.00474 5.23011 12 5.23011Z"
+          fill="#EF1E1E"
+        />
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="w-full h-10 flex items-center justify-center py-2 border border-neutral-200 rounded-sm"
+    >
+      <svg
+        width="24"
+        height="25"
+        viewBox="0 0 24 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_57645_51910)">
+          <path
+            d="M21.2806 18.5802C20.9327 19.3838 20.521 20.1234 20.044 20.8035C19.3938 21.7306 18.8614 22.3723 18.4511 22.7286C17.815 23.3135 17.1336 23.6131 16.4039 23.6301C15.88 23.6301 15.2482 23.4811 14.5128 23.1787C13.775 22.8777 13.0969 22.7286 12.4769 22.7286C11.8267 22.7286 11.1293 22.8777 10.3834 23.1787C9.63638 23.4811 9.03456 23.6386 8.57444 23.6543C7.87466 23.6841 7.17716 23.376 6.48093 22.7286C6.03656 22.341 5.48075 21.6766 4.8149 20.7353C4.10051 19.7302 3.51317 18.5646 3.05304 17.2358C2.56026 15.8004 2.31323 14.4105 2.31323 13.0649C2.31323 11.5236 2.6463 10.1941 3.31342 9.0801C3.83772 8.18525 4.53522 7.47937 5.4082 6.96118C6.28118 6.44299 7.22443 6.17892 8.24024 6.16203C8.79605 6.16203 9.52493 6.33395 10.4307 6.67184C11.3339 7.01087 11.9139 7.1828 12.1681 7.1828C12.3582 7.1828 13.0025 6.98177 14.0947 6.58098C15.1275 6.2093 15.9992 6.05541 16.7133 6.11603C18.6484 6.2722 20.1022 7.03501 21.069 8.40928C19.3384 9.45788 18.4823 10.9266 18.4993 12.8107C18.515 14.2782 19.0474 15.4995 20.0937 16.4691C20.5679 16.9192 21.0974 17.267 21.6866 17.514C21.5588 17.8846 21.4239 18.2395 21.2806 18.5802ZM16.8425 1.11638C16.8425 2.26664 16.4223 3.34064 15.5847 4.33472C14.5738 5.51648 13.3512 6.19936 12.0253 6.09161C12.0084 5.95361 11.9986 5.80838 11.9986 5.65576C11.9986 4.55151 12.4793 3.36974 13.333 2.40349C13.7592 1.91426 14.3013 1.50747 14.9586 1.18296C15.6145 0.863303 16.2349 0.686523 16.8184 0.65625C16.8354 0.810022 16.8425 0.963804 16.8425 1.11637V1.11638Z"
+            fill="#030303"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_57645_51910">
+            <rect width="24" height="24" fill="white" transform="translate(0 0.15625)" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+  <a
+    routerLink="/sign-up"
+    class="flex justify-center items-center self-center text-sm mt-6 text-neutral-800 gap-1.5"
+  >
+    Don’t have an account yet? <span class="underline text-cyan-700">Sign Up</span>
+  </a>
+</form>

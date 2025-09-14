@@ -1,0 +1,73 @@
+<a
+  [routerLink]="doctor.id"
+  class="flex items-start justify-start gap-4 rounded-md shadow-sm border border-neutral-200 bg-white p-4"
+>
+  <figure class="w-20 xl:w-30 rounded-md border border-neutral-200 overflow-hidden shrink-0">
+    <img [src]="doctor.img" [alt]="doctor.name" />
+  </figure>
+  <div class="w-full flex justify-between items-start flex-col">
+    <div class="w-full flex items-center justify-between">
+      <p class="text-sm xl:text-base font-semibold text-neutral-700">{{ doctor.name }}</p>
+      <button
+        type="button"
+        class="size-8 flex items-center justify-center text-neutral-500 border border-neutral-300 rounded-md py-1 px-1.5 hover:bg-neutral-200 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"
+        >
+          <circle cx="12" cy="12" r="1" data--h-bstatus="0OBSERVED" />
+          <circle cx="12" cy="5" r="1" data--h-bstatus="0OBSERVED" />
+          <circle cx="12" cy="19" r="1" data--h-bstatus="0OBSERVED" />
+        </svg>
+      </button>
+    </div>
+    <div class="w-full">
+      <p class="text-sm xl:text-sm text-neutral-500 mb-2">{{ doctor.specialty }}</p>
+      <p class="capitalize text-sm xl:text-sm text-neutral-500 py-1">
+        available: {{ doctor.availableDate | date : 'medium' }}
+      </p>
+    </div>
+    <div class="w-full flex items-center justify-between">
+      <p class="capitalize text-sm xl:text-sm text-neutral-500 leading-3">
+        start from:
+        <b class="text-primary-400">{{ doctor.salary | currency : 'EGP' }}</b>
+      </p>
+      <button
+        type="button"
+        class="size-8 flex items-center justify-center text-neutral-500 border border-neutral-300 rounded-md py-1 px-1.5 hover:bg-neutral-200 cursor-pointer"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-calendar-plus-icon lucide-calendar-plus"
+        >
+          <path d="M16 19h6" data--h-bstatus="0OBSERVED" />
+          <path d="M16 2v4" data--h-bstatus="0OBSERVED" />
+          <path d="M19 16v6" data--h-bstatus="0OBSERVED" />
+          <path
+            d="M21 12.598V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8.5"
+            data--h-bstatus="0OBSERVED"
+          />
+          <path d="M3 10h18" data--h-bstatus="0OBSERVED" />
+          <path d="M8 2v4" data--h-bstatus="0OBSERVED" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</a>
